@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrprüfungs-Auswertung | EHRN Fahrschule</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="image.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Fahrprüfungs-Auswertung</h1>
+            <p class="subtitle">EHRN Fahrschule - Digitales Prüfungsprotokoll</p>
+        </header>
+
+        <div class="card">
+            <h2 class="card-title">Prüfling & Fahrzeugdaten</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="robloxUsername">Roblox Username *</label>
+                    <input type="text" id="robloxUsername" placeholder="z.B. MusterSpieler123" required>
+                </div>
+                <div class="form-group">
+                    <label for="klasse">Führerscheinklasse *</label>
+                    <select id="klasse" required>
+                        <option value="">-- Bitte wählen --</option>
+                        <option value="AM">AM</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="CE">CE</option>
+                        <option value="D">D</option>
+                        <option value="DE">DE</option>
+                        <option value="T">T</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fahrzeug">Fahrzeugtyp *</label>
+                    <input type="text" id="fahrzeug" placeholder="z.B. Wolfsburg Handel" required>
+                </div>
+                <div class="form-group">
+                    <label for="kennzeichen">Kennzeichen *</label>
+                    <input type="text" id="kennzeichen" placeholder="z.B. HH AB 12" required>
+                </div>
+                <div class="form-group">
+                    <label for="farbe">Fahrzeugfarbe *</label>
+                    <input type="text" id="farbe" placeholder="z.B. Orange" required>
+                </div>
+                <div class="form-group">
+                    <label for="zeitVon">Prüfungsbeginn *</label>
+                    <input type="time" id="zeitVon" required>
+                </div>
+                <div class="form-group">
+                    <label for="zeitBis">Prüfungsende *</label>
+                    <input type="time" id="zeitBis" required>
+                </div>
+            </div>
+            <div class="info-badge">💡 Alle Felder sind Pflichtfelder</div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">
+                Fehlerdokumentation
+                <span class="fehler-counter" id="fehlerCount">0 Fehler</span>
+            </h2>
+            <p style="color: var(--text-medium); margin-bottom: 15px;">
+                Maximal 5 Fehler erlaubt • Ein Unfall zählt als 2 Fehler • Klicke mehrmals für mehrfache Fehler
+            </p>
+            
+            <div class="fehler-section">
+                <div class="fehler-grid" id="fehlerGrid">
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f1">Blinker nicht gesetzt</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f2">Schulterblick vergessen</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f3">Vorfahrt missachtet</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f4">Geschwindigkeit überschritten</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f5">Abstand nicht eingehalten</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f6">Falsches Einordnen</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f7">Stoppschild überfahren</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f8">Zu langsam gefahren</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f9">Falsch geparkt</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f10">Auf der Haltelinie gestanden</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f11">Rückwärtsfahren fehlerhaft</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f12">Ampel bei Rot überfahren</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f13">Spur nicht gehalten</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f14">Überholen fehlerhaft</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f15">Verkehrszeichen missachtet</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f16">Kreisverkehr falsch befahren</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f17">Fußgänger nicht beachtet</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0">
+                        <div class="fehler-content">
+                            <label for="f18">Elektronikcheck unvollständig</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item classe-specific" data-count="0" data-classes="C,CE,D,DE" style="display: none;">
+                        <div class="fehler-content">
+                            <label for="f19">Kein Warnblinker beim Rückwärtsfahren</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                    <div class="fehler-item" data-count="0" data-unfall="true" style="border: 2px solid var(--error);">
+                        <div class="fehler-content">
+                            <label for="unfall" style="color: var(--error); font-weight: 700;">⚠️ Unfall (2 Fehler)</label>
+                        </div>
+                        <span class="fehler-badge">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="generateBtn">
+                📋 Auswertung erstellen
+            </button>
+        </div>
+
+        <footer>
+            <p><strong>EHRN Fahrschule</strong> | Digitales Prüfungsprotokoll System</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Version 1.0 | Stand: Januar 2026</p>
+        </footer>
+    </div>
+
+    <!-- Modal für Auswertung -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Prüfungsergebnis</h3>
+                <span class="close-btn" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="result-badge" id="resultBadge"></div>
+                <div class="result-text" id="resultText"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-copy" id="copyBtn">
+                    📋 Text kopieren
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
